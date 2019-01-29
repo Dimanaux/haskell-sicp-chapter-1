@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a5ebed43b831b618da445e8e2a4387f82ac99d863f0698a6f8992445bf322bdc
+-- hash: 458feaea48a676de9bf27e986244d2ad2f1074e470d812915f0af1bb24ef0107
 
 name:           sicp-chapter1
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
   exposed-modules:
       Exercise01
       Lib
+      Library
   other-modules:
       Paths_sicp_chapter1
   hs-source-dirs:

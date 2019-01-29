@@ -1,4 +1,8 @@
-import Control.Cond
+module Exercise01
+    ( main
+    ) where
+
+import Library
 
 {- Exercise 1.1.
 -- Below is a sequence of expressions. What is the result
@@ -30,17 +34,17 @@ main = do
     -- print (a + b + (a * b))
     print ((+) a ((+) b ((*) a b))) -- 19
     -- print (a == b)
-    print ((==) a b)
+    print ((==) a b) -- False
     -- .......((b > a) && (b < a * b)) then b else a
-    print (if ((&&) ((>) b a) ((<) b ((*) a b))) then b else a)
-    -- there is no such statement COND in Haskell, but there is
+    print (if ((&&) ((>) b a) ((<) b ((*) a b))) then b else a) -- 4
+    -- there is no such statement COND in Haskell, but we can create a
     -- function cond, that takes a list of pairs (condition, expression)
     -- doing the same
     print (cond [((==) a 4 , 6                 )
                 ,((==) b 4 , ((+) 6 ((+) 7 a)) )
-                ,(otherwise, 0                 ) ])
+                ,(otherwise, 0                 ) ]) -- 16
     print ((*) (cond [((>) a b  , a )
                      ,((<) a b  , b )
                      ,(otherwise, -1) ])
-               ((+) a 1))
+               ((+) a 1)) -- 16
 
