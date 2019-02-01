@@ -11,7 +11,7 @@ module Exercise03
 sumOfSquaresOfTwoMax :: (Ord a, Num a) => a -> a -> a -> a
 sumOfSquaresOfTwoMax x y z
     | x > y = x^2 + (max y z)^2
-    | otherwise = x^2 + (max x z)^2
+    | otherwise = y^2 + (max x z)^2
 
 {-
 -- max - embedded function (function in Prelude)
