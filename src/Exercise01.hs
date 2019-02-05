@@ -1,5 +1,6 @@
 module Exercise01
-    ( main
+    (
+      main
     ) where
 
 import Library
@@ -47,4 +48,3 @@ main = do
                      ,((<) a b  , b )
                      ,(otherwise, -1) ])
                ((+) a 1)) -- 16
-
