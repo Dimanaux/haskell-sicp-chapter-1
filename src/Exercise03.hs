@@ -1,5 +1,6 @@
 module Exercise03
-    ( sumOfSquaresOfTwoMax
+    (
+      sumOfSquaresOfTwoMax
     ) where
 
 {- Exercise 1.3
@@ -19,4 +20,3 @@ sumOfSquaresOfTwoMax x y z
 max :: (Ord a) => a -> a -> a
 max x y = if x < y then y else x
 -}
-
