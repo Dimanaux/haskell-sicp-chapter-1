@@ -66,10 +66,10 @@ sqrt 0.0009 = 0.0403...
 sqrt 0.0001 = 0.032308...
 
 sqrt' 0.0009 = 0.030000012...
-sqrt' 0.0001 = 0.0010000714...
+sqrt' 0.0001 = 0.010000714...
 -}
 sqrt' :: Float -> Float
-sqrt' = sqrtIter' 1.0
+sqrt' = sqrtIter' 1
 
 sqrtIter' :: Float -> Float -> Float
 sqrtIter' guess x =
@@ -80,4 +80,12 @@ sqrtIter' guess x =
     nextGuess = improve guess x
 
 isGoodEnough' :: Float -> Float -> Bool
-isGoodEnough' prevGuess guess = guess `approximately` prevGuess
+isGoodEnough' = approximately
+-- changes from one iteration to the next
+-- and to stop when the change is a very small fraction of
+-- the guess.
+-- (guess' - guess) / guess is a very small fraction
+-- -> (guess' - guess) / guess ~ 0
+-- -> guess' / guess - 1 ~ 0
+-- -> guess' / guess ~ 1
+-- -> guess' ~ guess
