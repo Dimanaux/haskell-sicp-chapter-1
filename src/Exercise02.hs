@@ -1,5 +1,6 @@
 module Exercise02
-    ( expression
+    (
+      expression
     ) where
 
 {- Translate the following expression into prefix form
@@ -9,12 +10,11 @@ module Exercise02
 
 expression :: Fractional a => a
 expression = (/) ((+) 5
-                     ((+) 4
-                          ((-) 2
-                               ((-) 3
-                                    ((+) 6
-                                         ((/) 4 5))))))
-                  ((*) 3
-                       ((*) ((-) 6 2)
-                            ((-) 2 7)))
-
+                      ((+) 4
+                           ((-) 2
+                                ((-) 3
+                                     ((+) 6
+                                          ((/) 4 5))))))
+                 ((*) 3
+                      ((*) ((-) 6 2)
+                           ((-) 2 7)))
