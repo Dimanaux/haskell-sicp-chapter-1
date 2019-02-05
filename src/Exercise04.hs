@@ -1,5 +1,6 @@
 module Exercise04
-    ( aPlusAbsB
+    (
+      aPlusAbsB
     ) where
 
 {- Exercise 1.4

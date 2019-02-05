@@ -1,5 +1,6 @@
 module Exercise06
-    ( newIf
+    (
+      newIf
     ) where
 
 import Library (cond)
@@ -12,8 +13,8 @@ import Library (cond)
 -- she defines a new version of if:
 
 (define (new-if predicate then-clause else-clause)
-  (cond (predicate then-clause)
-        (else else-clause)))
+    (cond (predicate then-clause)
+          (else else-clause)))
 
 -- Eva demonstrates the program for Alyssa:
 (new-if (= 2 3) 0 5)
@@ -46,12 +47,12 @@ import Library (cond)
 -}
 newIf :: Bool -> a -> a -> a
 newIf predicate thenClause elseClause =
-  cond [(predicate, thenClause), (otherwise, elseClause)]
+    cond [(predicate, thenClause), (otherwise, elseClause)]
 
 {-
 -- OR
 newIf :: Bool -> a -> a -> a
 newIf predicate thenClause elseClause
-  | predicate = thenClause
-  | otherwise = elseClause
+    | predicate = thenClause
+    | otherwise = elseClause
 -}

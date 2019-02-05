@@ -1,6 +1,7 @@
 module Exercise05
-    ( test,
-      p
+    (
+      test
+    , p
     ) where
 
 {- Exercise 1.5
@@ -12,9 +13,9 @@ module Exercise05
 (define (p) (p))
 
 (define (test x y)
-  (if (= x 0)
-      0
-      y))
+    (if (= x 0)
+        0
+        y))
 
 -- Then he evaluates the expression
 
