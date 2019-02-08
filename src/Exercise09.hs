@@ -24,6 +24,9 @@ module Exercise09 where
 -- The processes below may not relate to Haskell
 -}
 
+let dec = pred
+let inc = succ
+
 -- in Haskell:
 add :: Int -> Int
 add 0 b = b
