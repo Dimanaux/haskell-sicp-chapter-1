@@ -31,6 +31,9 @@ spec = do
 
   describe "sqrt' comparing to badSqrt" $ do
     it "sqrt' should be more accurate than badSqrt" $ do
-      abs (3 - sqrt' (3^2)) <= abs (3 - badSqrt (3^2))
-      abs (1000 - sqrt' (1000^2)) <= abs (1000 - badSqrt (1000^2))
-      abs (0.007 - sqrt' (0.007^2)) <= abs (0.007 - badSqrt (0.007^2))
+      shouldSatisfy (abs (3 - sqrt' (3^2)))
+                    (<= (abs (3 - badSqrt (3^2))))
+      shouldSatisfy (abs (1000 - sqrt' (1000^2)))
+                    (<= (abs (1000 - badSqrt (1000^2))))
+      shouldSatisfy (abs (0.007 - sqrt' (0.007^2)))
+                    (<= (abs (0.007 - badSqrt (0.007^2))))
