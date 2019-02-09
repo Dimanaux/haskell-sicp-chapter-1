@@ -42,7 +42,7 @@ a x y = a (x - 1) (a x (y - 1))
 
 
 {- IMPORTANT NOTE
--- The processes below may not relate to Haskell 
+-- The processes below may not relate to Haskell
 -}
 
 {- (A 1 10)

@@ -22,4 +22,3 @@ module Exercise04
 -- Choose between + and -, then give a and b to it
 aPlusAbsB :: (Ord a, Num a) => a -> a -> a
 aPlusAbsB a b = (if (b > 0) then (+) else (-)) a b
-
