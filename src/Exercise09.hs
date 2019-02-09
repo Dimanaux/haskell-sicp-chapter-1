@@ -24,11 +24,14 @@ module Exercise09 where
 -- The processes below may not relate to Haskell
 -}
 
-let dec = pred
-let inc = succ
+dec :: Int -> Int
+dec = pred
+
+inc :: Int -> Int
+inc = succ
 
 -- in Haskell:
-add :: Int -> Int
+add :: Int -> Int -> Int
 add 0 b = b
 add a b = inc (add (dec a) b)
 
@@ -51,9 +54,9 @@ add a b = inc (add (dec a) b)
 -}
 
 -- in Haskell:
-add' :: Int -> Int
+add' :: Int -> Int -> Int
 add' 0 b = b
-add' a b = add (dec a) (inc b)
+add' a b = add' (dec a) (inc b)
 
 {- the second procedure's process:
 (+ 4 5)
