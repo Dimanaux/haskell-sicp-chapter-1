@@ -44,7 +44,7 @@ firstDenomination :: Int -> Int
 firstDenomination k = [1, 5, 10, 25, 50] !! (k - 1)
 ```
 
-![Exercise13.png](Exercise13.png "the tree illustrating the process (count-change 11)")
+![Exercise14.png](Exercise14.png "the tree illustrating the process (count-change 11)")
 
 The order of growth of the space is __Theta(a + k)__, since
 we can process only one tree branch at a time and tree
