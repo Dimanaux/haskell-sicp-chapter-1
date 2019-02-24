@@ -2,6 +2,8 @@ module Library
     (
       cond
     , approximately
+    , halve
+    , double
     ) where
 
 -- LISP style function cond
@@ -16,3 +18,9 @@ epsilonComparison epsilon a b = abs (a - b) < epsilon
 -- uses comparison with 0.0001 precision
 approximately :: Float -> Float -> Bool
 approximately = epsilonComparison 1e-4
+
+double :: Int -> Int
+double = (*2)
+
+halve :: Int -> Int
+halve = (`div` 2)
