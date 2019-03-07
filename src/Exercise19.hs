@@ -3,7 +3,7 @@ module Exercise19
       fib
     ) where
 
-{-- Exercise 1.19.
+{- Exercise 1.19.
 -- There is a clever algorithm for computing the Fibonacci
 -- numbers in a logarithmic number of steps. Recall the
 -- transformation of the state variables a and b in the
@@ -23,7 +23,8 @@ module Exercise19
 -- explicit way to square these transformations, and thus we
 -- can compute T^n using successive squaring, as in the
 -- fast-expt procedure. Put this all together to complete
--- the following procedure, which runs in a logarithmic number of steps:
+-- the following procedure, which runs in a logarithmic
+-- number of steps:
 (define (fib n)
   (fib-iter 1 0 0 1 n))
 (define (fib-iter a b p q count)
@@ -45,15 +46,15 @@ module Exercise19
 {- solution
 a <- bq + aq + ap
 b <- bp + aq
-Tpq(1, 0) where p = 0, q = 1
-
 
 Tpq(Tpq(a, b)) = Tp'q'(a, b)
 Tpq(bq + aq + ap, bp + aq) = Tp'q'(a, b)
-(2bpq + 2aqq + bqq + 2apq + app, bpp + 2apq + bqq + aqq) = Tp'q'(a, b)
-Tp'q'(a, b) = (2bpq + 2aqq + bqq + 2apq + app, bpp + 2apq + bqq + aqq)
-              (b (2pq + qq) + a(qq + pp) + a(2pq + qq),
-              b (pp + qq) + a(2pq + qq))
+(2bpq + 2aqq + bqq + 2apq + app, bpp + 2apq + bqq + aqq)
+    = Tp'q'(a, b)
+Tp'q'(a, b) = (2bpq + 2aqq + bqq + 2apq + app,
+               bpp + 2apq + bqq + aqq)
+Tp'q' = (b (2pq + qq) + a(qq + pp) + a(2pq + qq),
+         b (pp + qq) + a(2pq + qq))
 p' = pp + qq = p^2 + q^2
 q' = 2pq + qq = 2pq + q^2
 -}
@@ -63,7 +64,7 @@ fib :: Integer -> Integer
 fib = fibIter 1 0 0 1
 
 -- takes 5 integers
-fibIter :: Integer -> Integer -> Integer -> Integer -> Integer -> Integer
+fibIter :: Integral t => t -> t -> t -> t -> t -> t
 fibIter a b p q 0 = b
 fibIter a b p q count
     | even count = fibIter a b p' q' (count `div` 2)
