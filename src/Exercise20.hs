@@ -1,4 +1,7 @@
-module Exercise20 where
+module Exercise20
+    (
+      gcd'
+    ) where
 
 {- Exercise 1.20.
 -- The process that a procedure generates is of course
