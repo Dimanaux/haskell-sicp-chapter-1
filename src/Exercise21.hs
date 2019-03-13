@@ -1,4 +1,7 @@
-module Exercise21 where
+module Exercise21
+    (
+      smallestDivisor
+    ) where
 
 {- Exercise 1.21.
 -- Use the smallest-divisor procedure to find the smallest
