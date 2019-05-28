@@ -4,9 +4,12 @@ module Library
     , approximately
     , halve
     , double
+    , randomList
     ) where
 
--- LISP style function cond
+import System.Random (mkStdGen, randoms)
+
+-- LISP style function cond (for 1.1)
 cond :: [(Bool, a)] -> a
 cond [] = error "Non-exhaustive conditions. At least 1 condition must be true."
 cond (x:xs) = if fst x then snd x else cond xs
@@ -24,3 +27,6 @@ double = (*2)
 
 halve :: Int -> Int
 halve = (`div` 2)
+
+randomList :: Integer -> [Integer]
+randomList n = map (`mod` n) (randoms (mkStdGen (fromIntegral n)))
